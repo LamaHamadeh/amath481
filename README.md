@@ -1,7 +1,7 @@
 # AMATH 481
 
 > Scientific Computing  
-> Fall quarter, 2019  
+> Fall quarter, 2018  
 > Taught by Professor Eli Shlizerman  
 
 
