@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ffmpeg -framerate 24 -i ./images/cool_%04d.png -pix_fmt yuv420p -vf "crop=1870:780:3:1" ./pease_cool.mp4

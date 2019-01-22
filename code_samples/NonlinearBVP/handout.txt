@@ -1,0 +1,25 @@
+clear all; close all; clc;
+
+beta = 99;
+xinit = linspace(-1,1,50);
+init = bvpinit(xinit,@bc_init,beta);
+
+sol = bvp4c(@rhs_bvp,@bvp_bc,init);
+
+x = linspace(-1,1,100);
+BS = deval(sol,x);
+plot(x,BS(1,:));
+
+----
+function rhs=rhs_bvp(x,y,beta)
+rhs = [y(2); (beta-100)*y(1)-y(1)^3];
+%rhs = [y(2); (beta-100)*y(1)-10*y(1)^3];
+
+----
+function bc = bvp_bc(yl,yr,beta)
+bc = [yl(1); yl(2)-1; yr(1)];
+%bc = [yl(1); yl(2)-0.1; yr(1)];
+
+----
+function in=bc_init(x)
+in = [cos((pi/2)*x); -(pi/2)*sin((pi/2)*x)];
