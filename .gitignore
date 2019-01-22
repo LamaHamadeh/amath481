@@ -1,0 +1,8 @@
+# Generated MATLAB data files
+
+*.dat
+
+# HW 4 generated images
+
+hw4/images/*.png
+hw4/*.mp4
